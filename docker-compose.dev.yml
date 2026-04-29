@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: opensite-backend-dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - analytics_data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///./data/analytics.db
+      - SECRET_KEY=dev-secret-key
+      - CORS_ORIGINS=http://localhost:3000,http://frontend:3000
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+    networks:
+      - opensite-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: opensite-frontend-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    command: npm run dev
+    restart: unless-stopped
+    networks:
+      - opensite-network
+
+volumes:
+  analytics_data:
+
+networks:
+  opensite-network:
+    driver: bridge

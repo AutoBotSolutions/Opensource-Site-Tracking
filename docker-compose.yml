@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: opensite-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - analytics_data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///./data/analytics.db
+      - SECRET_KEY=your-secret-key-change-in-production
+      - CORS_ORIGINS=http://localhost:3000,http://frontend:3000
+    restart: unless-stopped
+    networks:
+      - opensite-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: opensite-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - opensite-network
+
+volumes:
+  analytics_data:
+
+networks:
+  opensite-network:
+    driver: bridge

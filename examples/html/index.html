@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSite Analytics Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .form {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>OpenSite Analytics Demo</h1>
+    <p>This page demonstrates the OpenSite Analytics tracking integration.</p>
+    
+    <h2>Page View Tracking</h2>
+    <p>This page is automatically tracked when loaded. Check your dashboard to see the page view.</p>
+    
+    <h2>Custom Event Tracking</h2>
+    <button class="button" onclick="trackButtonClick()">Track Button Click</button>
+    <button class="button" onclick="trackDownload()">Track Download</button>
+    
+    <h2>Form Tracking</h2>
+    <div class="form">
+        <form onsubmit="trackFormSubmit(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            
+            <button type="submit" class="button">Submit Form</button>
+        </form>
+    </div>
+    
+    <h2>Navigation</h2>
+    <a href="page2.html" class="button">Go to Page 2</a>
+    
+    <!-- OpenSite Analytics Tracking Script -->
+    <script>
+        (function(w,d,s,id){
+            w.OpenSite=w.OpenSite||function(){(w.OpenSite.q=w.OpenSite.q||[]).push(arguments)};
+            var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s);
+            j.async=true;
+            j.src='http://localhost:8000/tracking-script.js';
+            j.id=id;
+            f.parentNode.insertBefore(j,f);
+        })(window,document,'script','opensite-analytics');
+        
+        // Replace with your actual site key and API key
+        OpenSite('init', 'YOUR_SITE_KEY', 'YOUR_API_KEY');
+        OpenSite('trackPageview');
+        
+        // Track button click
+        function trackButtonClick() {
+            OpenSite('trackEvent', 'button_click', {
+                button_id: 'demo-button',
+                page: window.location.pathname
+            });
+            alert('Button click tracked!');
+        }
+        
+        // Track download
+        function trackDownload() {
+            OpenSite('trackEvent', 'file_download', {
+                file_name: 'demo-file.pdf',
+                file_size: '1.5MB'
+            });
+            alert('Download tracked!');
+        }
+        
+        // Track form submission
+        function trackFormSubmit(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            OpenSite('trackEvent', 'form_submit', {
+                form_name: 'contact-form',
+                email: email,
+                message_length: message.length
+            });
+            
+            alert('Form submission tracked!');
+        }
+    </script>
+</body>
+</html>
