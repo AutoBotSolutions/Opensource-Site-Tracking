@@ -23,6 +23,27 @@ A powerful, open-source, self-hosted analytics platform for tracking website per
 - ♻️ **Data Retention** - Automated cleanup of old data
 - 🐳 **Docker Support** - Easy deployment with Docker and Docker Compose
 
+## 📚 Documentation
+
+For comprehensive documentation, see the [docs](docs/) directory:
+
+### Core Documentation
+- [API Documentation](docs/API.md) - Complete API reference and endpoints
+- [Installation Guide](docs/INSTALLATION.md) - Detailed installation instructions
+- [Configuration Guide](docs/CONFIGURATION.md) - System configuration options
+- [User Guide](docs/USER_GUIDE.md) - End-user documentation
+- [Deployment Guide](docs/DEPLOYMENT.md) - Production deployment instructions
+- [Development Guide](docs/DEVELOPMENT.md) - Developer setup and contribution
+
+### Project Information
+- [Contributing](docs/CONTRIBUTING.md) - How to contribute to the project
+- [Changelog](docs/CHANGELOG.md) - Version history and changes
+- [License](docs/LICENSE.md) - License information
+
+### Additional Resources
+- [Wiki](https://github.com/AutoBotSolutions/Opensource-Site-Tracking/wiki) - Community wiki with detailed guides
+- [License Options](docs/license/README.md) - Commercial licensing information
+
 ## Project Structure
 
 ```
