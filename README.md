@@ -1,21 +1,26 @@
 # OpenSite Analytics - Self-Hosted Site Tracking System
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/AutoBotSolutions/Opensource-Site-Tracking/blob/main/LICENSE.md)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-green.svg)](https://www.python.org/downloads/)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen.svg)](https://nodejs.org/)
+[![Docker](https://img.shields.io/badge/Docker-Supported-blue.svg)](https://www.docker.com/)
+
 A powerful, open-source, self-hosted analytics platform for tracking website performance across multiple domains. Real-time analytics, multi-domain support, user authentication, and easy integration with a simple JavaScript SDK.
 
-## Features
+## 🌟 Features
 
-- 📊 **Real-time Analytics** - Track page views, events, and user sessions in real-time with WebSocket support
+- 📈 **Real-time Analytics** - Track page views, events, and user sessions in real-time with WebSocket support
 - 🌐 **Multi-Domain Support** - Monitor multiple websites from a single dashboard
-- 🔒 **Self-Hosted & Private** - Your data stays on your own server
-- � **User Authentication** - Secure login system with JWT tokens
-- �📱 **Responsive Dashboard** - Beautiful, modern UI built with Next.js and TailwindCSS
-- 🔌 **Easy Integration** - Simple JavaScript SDK similar to Google Analytics
-- 🎯 **Event & Goal Tracking** - Custom events and conversion goals
-- 👥 **User Analytics** - Unique visitors, sessions, and behavior tracking
-- 📈 **Detailed Reports** - Page views, bounce rates, session duration, and more
-- 🌍 **Geographic Data** - Automatic IP-based location detection
-- 🏷️ **UTM Tracking** - Campaign parameter tracking for marketing analytics
-- 🧹 **Data Retention** - Automated cleanup of old data
+- 🛡️ **Self-Hosted & Private** - Your data stays on your own server
+- 🔑 **User Authentication** - Secure login system with JWT tokens
+- 💻 **Responsive Dashboard** - Beautiful, modern UI built with Next.js and TailwindCSS
+- ⚡ **Easy Integration** - Simple JavaScript SDK similar to Google Analytics
+- � **Event & Goal Tracking** - Custom events and conversion goals
+- 👁️ **User Analytics** - Unique visitors, sessions, and behavior tracking
+- 📊 **Detailed Reports** - Page views, bounce rates, session duration, and more
+- 🗺️ **Geographic Data** - Automatic IP-based location detection
+- 📌 **UTM Tracking** - Campaign parameter tracking for marketing analytics
+- ♻️ **Data Retention** - Automated cleanup of old data
 - 🐳 **Docker Support** - Easy deployment with Docker and Docker Compose
 
 ## Project Structure
@@ -290,7 +295,30 @@ Or deploy to Vercel, Netlify, or any Node.js hosting platform.
 
 ## License
 
-MIT License - Feel free to use and modify for your projects.
+This project is available under multiple licensing options to suit different use cases.
+
+### Open Source License
+- **MIT License** - Free for all uses with attribution required
+  - See [LICENSE.md](LICENSE.md) for full terms
+  - Perfect for personal projects, open source projects, and internal use
+
+### Commercial Licenses
+For commercial use without attribution, enterprise deployments, or redistribution, we offer several commercial license options:
+
+- **Standard Commercial License** ($499/year) - Commercial use without attribution
+- **Enterprise License** ($2,499/year) - Enterprise deployments with priority support
+- **OEM License** ($9,999/year) - Redistribution and embedding rights
+- **White Label License** ($19,999/year) - Rebranding and resale rights
+
+For detailed license information, pricing, and terms, see the [License Documentation](docs/license/README.md).
+
+### License Owner
+**Robert Trenaman | Auto Bot Solution (Software Customs) | Flushing MI**
+
+### Contact
+- **Sales:** sales@opensite-analytics.com
+- **Legal:** legal@opensite-analytics.com
+- **Support:** support@opensite-analytics.com
 
 ## Contributing
 
