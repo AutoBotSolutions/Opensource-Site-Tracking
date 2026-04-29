@@ -7,7 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { BarChart3, Plus, Globe, TrendingUp, Users, Activity, LogOut } from 'lucide-react'
-import Link from 'next/link'
 
 export default function Dashboard() {
   const router = useRouter()
@@ -144,37 +143,35 @@ export default function Dashboard() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sites.map((site) => (
-              <Link key={site.id} href={`/site/${site.id}`}>
-                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <CardTitle className="text-lg">{site.name}</CardTitle>
-                        <CardDescription className="mt-1">{site.domain}</CardDescription>
-                      </div>
-                      <Globe className="h-5 w-5 text-slate-400" />
+              <Card key={site.id} className="hover:shadow-lg transition-shadow cursor-pointer h-full" onClick={() => router.push(`/site/${site.id}`)}>
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <CardTitle className="text-lg">{site.name}</CardTitle>
+                      <CardDescription className="mt-1">{site.domain}</CardDescription>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-600">Status</span>
-                        <span className={`px-2 py-1 rounded-full text-xs ${
-                          site.is_active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                        }`}>
-                          {site.is_active ? 'Active' : 'Inactive'}
-                        </span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-600">Site Key</span>
-                        <span className="font-mono text-xs bg-slate-100 px-2 py-1 rounded">
-                          {site.site_key.slice(0, 8)}...
-                        </span>
-                      </div>
+                    <Globe className="h-5 w-5 text-slate-400" />
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-slate-600">Status</span>
+                      <span className={`px-2 py-1 rounded-full text-xs ${
+                        site.is_active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                      }`}>
+                        {site.is_active ? 'Active' : 'Inactive'}
+                      </span>
                     </div>
-                  </CardContent>
-                </Card>
-              </Link>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-slate-600">Site Key</span>
+                      <span className="font-mono text-xs bg-slate-100 px-2 py-1 rounded">
+                        {site.site_key.slice(0, 8)}...
+                      </span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         )}
