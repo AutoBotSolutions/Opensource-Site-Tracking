@@ -86,3 +86,6 @@ htmlcov/
 # Misc
 .cache/
 .parcel-cache/
+
+# Site directory (kept locally, not in repo)
+site/
