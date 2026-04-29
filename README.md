@@ -1,6 +1,6 @@
 # OpenSite Analytics - Self-Hosted Site Tracking System
 
-A powerful, open-source, self-hosted analytics platform for tracking website performance across multiple domains.
+A powerful, open-source, self-hosted analytics platform for tracking website performance across multiple domains. Real-time analytics, multi-domain support, user authentication, and easy integration with a simple JavaScript SDK.
 
 ## Features
 
