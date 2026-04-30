@@ -44,6 +44,10 @@ For comprehensive documentation, see the [docs](docs/) directory:
 - [Wiki](https://github.com/AutoBotSolutions/Opensource-Site-Tracking/wiki) - Community wiki with detailed guides
 - [License Options](docs/license/README.md) - Commercial licensing information
 
+## 🚀 Live Demo
+
+View the live site at: **https://autobotsolutions.github.io/Opensource-Site-Tracking/**
+
 ## Project Structure
 
 ```
